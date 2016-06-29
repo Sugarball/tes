@@ -22,8 +22,22 @@ router.get('/timestamp', function(req, res, next) {
   res.render('timestamp', { title: 'Express' });
 });
 
+router.get('/getip', function(req, res, next) {
+	var ip = req.headers['x-forwarded-for'] || 
+ 	req.connection.remoteAddress || 
+ 	req.socket.remoteAddress ||
+ 	req.connection.socket.remoteAddress;
+
+ 	var lan = req.headers["accept-language"].split(',')[0];
+
+ 	var pc = req.headers['user-agent'].split(') ')[0].split(' (')[1];
+
+  res.render('getip', {ip : ip, lan : lan, pc : pc});
+});
+
 
 router.get('/', function(req, res, next) {
+
   res.render('timestamp', { title: 'Express' });
 });
 
