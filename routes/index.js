@@ -19,12 +19,12 @@ router.get('/timestamp/:time', function(req, res, next) {
 });
 
 router.get('/timestamp', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('timestamp', { title: 'Express' });
 });
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('timestamp', { title: 'Express' });
 });
 
 module.exports = router;
